@@ -1,16 +1,2 @@
-# washingmachine_tracker
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# UTSA-washing-machine-tracker
+UTSA-washing-machine-tracker is a Flutter app designed to track washing machine availability in campus dorms. Using an honor system, residents can mark machines as "in use" or "available," providing real-time updates to help others find open machines. The app aims to improve laundry scheduling and reduce wait times for campus residents
