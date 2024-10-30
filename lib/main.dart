@@ -13,119 +13,99 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        bottomNavigationBar: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF00162C),
-                Color(0xFF001529),
-                Color(0xFF001427),
-              ],
-              stops: [0.0, 0.5, 1.0],
-            ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
-            child: GNav(
-              backgroundColor: Colors.transparent,
-              color: Colors.white,
-              // tabBackgroundColor: Colors.indigo.shade900,
-              tabActiveBorder: Border.all(color: Colors.grey, width: 1),
-              rippleColor: Colors.white10,
-              activeColor: Colors.white,
-              gap: 8,
-              padding: EdgeInsets.all(16),
-              tabs: const [
-                GButton(
-                  icon: Icons.home,
-                  text: 'Home',
-                ),
-                GButton(
-                  icon: Icons.map,
-                  text: 'Locations',
-                ),
-                GButton(
-                  icon: Icons.local_police,
-                  text: 'UTSA PD',
-                ),
-                GButton(
-                  icon: Icons.settings,
-                  text: 'Settings',
-                ),
-
-              ],
-            ),
-          ),
-        ),
-
         body: Stack(
           children: [
+            // Background gradient
             Container(
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF001427),
-                      Color(0xFF00488D),
-                      Color(0xFF000000),
-                    ],
-                    stops: [0.0, 0.0, 0.42],
-                  )
+                color: Color(0xFF121212),
               ),
             ),
-            Positioned(
-              top: 250,
+            // This is an idea of the cards for each apartment
+            // Positioned(
+            //   top: 300,
+            //   bottom: 300,
+            //   child: Container(
+            //     width: 350,
+            //     height: 200,
+            //     decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.only(
+            //           topLeft: Radius.circular(25),
+            //           topRight: Radius.circular(25),
+            //         ),
+            //         boxShadow: [
+            //           BoxShadow(
+            //             color: Colors.black,
+            //             offset: const Offset(
+            //               0.0,
+            //               0.0,
+            //             ),
+            //             blurRadius: 10.0,
+            //             spreadRadius: 10.0,
+            //           )
+            //         ],
+            //         gradient: LinearGradient(
+            //           begin: Alignment.bottomLeft,
+            //           end: Alignment.topRight,
+            //           colors: [
+            //             Color(0xFF393939),
+            //             Color(0xFF515151),
+            //             Color(0xFF000000),
+            //           ],
+            //           stops: [0.0, 0.5, 1.0],
+            //         )
+            //     ),
+            //   ),
+            // ),
+            Align(
+              alignment: Alignment.bottomCenter,
               child: Container(
-                width: MediaQuery.sizeOf(context).width,
-                height: MediaQuery.sizeOf(context).height,
+                width: MediaQuery.of(context).size.width,
+                height: 100,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(25)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black,
-                      offset: const Offset(
-                        5.0,
-                        5.0,
-                      ),
-                      blurRadius: 10.0,
-                      spreadRadius: 10.0,
-                    )
+                  color: Color(0xFF121212),
+                ),
+              ),
+            ),
+            // Bottom navigation bar positioned at the bottom of the Stack
+            //     Notes:
+            //       width: MediaQuery.of(context).size.width,
+            //       height: MediaQuery.of(context).size.height,
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+                child: GNav(
+                  backgroundColor: Colors.transparent,
+                  color: Colors.white,
+                  tabActiveBorder: Border.all(color: Colors.grey, width: 2),
+                  rippleColor: Colors.transparent,
+                  activeColor: Colors.white,
+                  gap: 8,
+                  padding: EdgeInsets.all(16),
+                  tabs: const [
+                    GButton(
+                      icon: Icons.home,
+                      text: 'Home',
+                    ),
+                    GButton(
+                      icon: Icons.map,
+                      text: 'Locations',
+                    ),
+                    GButton(
+                      icon: Icons.local_police,
+                      text: 'UTSA PD',
+                    ),
+                    GButton(
+                      icon: Icons.settings,
+                      text: 'Settings',
+                    ),
                   ],
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF00162C),
-                      Color(0xFF001529),
-                      Color(0xFF001427),
-                    ],
-                    stops: [0.0, 0.5, 1.0],
-                  )
                 ),
               ),
             ),
           ],
         ),
-        // body: Container(
-        //   decoration: const BoxDecoration(
-        //     gradient: LinearGradient(
-        //       begin: Alignment.topCenter,
-        //       end: Alignment.bottomCenter,
-        //       colors: [
-        //         Color(0xFF001427),
-        //         Color(0xFF00488D),
-        //         Color(0xFF000000),
-        //       ],
-        //       stops: [0.0, 0.0, 0.42],
-        //     ),
-        //   ),
-        //   child: Center(
-        //     child: Text('data'),
-        //   ),
-        // ),
       ),
     );
   }
